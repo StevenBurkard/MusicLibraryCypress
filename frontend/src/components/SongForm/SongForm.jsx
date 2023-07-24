@@ -29,18 +29,18 @@ const handleSubmit = async(e) =>{
             <form onSubmit={handleSubmit}>
                 <h1>Add a Song</h1>
                 <label>Title</label>
-                <input name="title" onChange={(e)=>setTitle(e.target.value)} />
+                <input name="title" onChange={(e)=>setTitle(e.target.value)} data-cy="song-title" />
                 <label>Artist</label>
-                <input name="artist" onChange={(e)=>setArtist(e.target.value)} />
+                <input name="artist" onChange={(e)=>setArtist(e.target.value)} data-cy="song-artist" />
                 <label>Album</label>
-                <input name="album" onChange={(e)=>setAlbum(e.target.value)} />
+                <input name="album" onChange={(e)=>setAlbum(e.target.value)} data-cy="song-album" />
                 <label>Genre</label>
-                <input name="genre" onChange={(e)=>setGenre(e.target.value)} />
+                <input name="genre" onChange={(e)=>setGenre(e.target.value)} data-cy="song-genre" />
                 <label>Release Date</label>
-                <input type="date" name="release_date" onChange={(e)=>setReleaseDate(e.target.value)} />
+                <input type="date" name="release_date" onChange={(e)=>setReleaseDate(e.target.value)} data-cy="song-release-date" />
                 <label>Running Time</label>
-                <input name="running_time" onChange={(e)=>setRunningTime(e.target.value)} />
-                <button type="submit">Add Song</button>
+                <input name="running_time" onChange={(e)=>setRunningTime(e.target.value)} data-cy="song-running-time" />
+                <button type="submit" data-cy="add-song-button">Add Song</button>
             </form>
             </div>
          );
