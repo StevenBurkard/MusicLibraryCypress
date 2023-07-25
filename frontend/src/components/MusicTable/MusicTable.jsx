@@ -53,14 +53,14 @@ const MusicTable = (props) => {
           <tbody>
             {props.songs.map((song) => {
               return (
-                <tr key={song.id}>
+                <tr key={song.id} data-cy={`song-row-${song.id}`}>
                   <td>{song.title}</td>
                   <td>{song.artist}</td>
                   <td>{song.album}</td>
                   <td>{song.genre}</td>
                   <td>{song.release_date}</td>
                   <td>{calculateMinutes(song.running_time).toFixed(2)}</td>
-                  <td><button onClick={() => deleteSong(song.id)} type="submit">
+                  <td><button data-cy={`delete-song-${song.id}`} onClick={() => deleteSong(song.id)} type="submit">
                     Delete Song
                   </button></td>
                   <td><button type="button" onClick={() => handleEdit(song)}>

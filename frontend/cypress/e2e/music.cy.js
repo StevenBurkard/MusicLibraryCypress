@@ -19,5 +19,19 @@ describe('Music Library app', () => {
       cy.get('[data-cy=search-bar]').type(searchTerm).wait(1000);
       cy.get('table').contains('td', searchTerm).should('be.visible');
     });
+
+    it('Deletes the new song', () => {
+      const songTitle = 'Sabotage';
+
+      cy.contains('td', songTitle)
+        .parent('[data-cy^=song-row-]')
+        .invoke('attr', 'data-cy')
+        .then(songRowAttr => {
+          const songId = songRowAttr.split('-')[2];
+
+          cy.get(`[data-cy=delete-song-${songId}]`).click();
+          cy.get(`[data-cy=song-row-${songId}]`).should('not.exist');
+        });
+    });
   
 });
